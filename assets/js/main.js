@@ -5,21 +5,44 @@
   // ---------- Mobile menu ----------
   const btnMenu = $('#btnMenu');
   const drawer = $('#mobileDrawer');
+
   if (btnMenu && drawer) {
-    const toggle = () => {
-      const isHidden = drawer.hasAttribute('hidden');
-      if (isHidden) drawer.removeAttribute('hidden');
-      else drawer.setAttribute('hidden', '');
-      btnMenu.setAttribute('aria-expanded', String(isHidden));
+    const openDrawer = () => {
+      drawer.classList.add('is-open');
+      drawer.setAttribute('aria-hidden', 'false');
+      btnMenu.setAttribute('aria-expanded', 'true');
+      document.documentElement.classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
     };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden', 'true');
+      btnMenu.setAttribute('aria-expanded', 'false');
+      document.documentElement.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
+    };
+
+    const toggle = () => {
+      const isOpen = drawer.classList.contains('is-open');
+      if (isOpen) closeDrawer();
+      else openDrawer();
+    };
+
     btnMenu.addEventListener('click', toggle);
-    $$('#mobileDrawer a').forEach(a => a.addEventListener('click', () => drawer.setAttribute('hidden', '')));
+    $$('#mobileDrawer a').forEach(a => a.addEventListener('click', closeDrawer));
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') drawer.setAttribute('hidden', '');
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // fecha ao clicar fora
+    document.addEventListener('click', (e) => {
+      const within = drawer.contains(e.target) || btnMenu.contains(e.target);
+      if (!within && drawer.classList.contains('is-open')) closeDrawer();
     });
   }
 
-  // ---------- Scroll progress + back to top ----------
+  // ---------- Scroll progress + back to top ---------- + back to top ----------
   const progress = $('.scroll-progress');
   const toTop = $('#toTop');
   const waFloat = $('.wa-float');

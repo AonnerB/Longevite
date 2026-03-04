@@ -47,7 +47,7 @@
     </div>
 
     <div class="container">
-      <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
         <a href="#programa">Programa</a>
@@ -732,27 +732,36 @@
           <div class="block reveal" data-anim="fade-right">
             <h3>Agendamento e informações</h3>
             <p>
-              Horário: Seg–Sex 08:00–18:00 • Sáb 08:00–12:00<br>
-              Endereço: (Rua, número, bairro, cidade)<br>
-              Telefone/WhatsApp: (00) 00000-0000<br>
+              Horário: Seg–Sex 08:00–18:00 • Sáb-Dom Fechado<br>
+              <hr>
+              Endereço: Atrás do antigo Hospital Materno Infantil<br>
+              Av. Perimetral, 376 - ST. Coimbra, Goiânia - GO<br>
+              <hr>
+              Telefone/WhatsApp: (62) 9996-8132<br>
               E-mail: contato@longevite.com.br
             </p>
 
             <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
-              <button class="btn btn-teal" data-open="modal-agendar">Agendar avaliação</button>
-            </div>
-
-            <p class="note">Dica: o botão de WhatsApp no modal está com número placeholder (5500000000000).</p>
-          </div>
-
-          <div class="map reveal" data-anim="fade-left" aria-label="Mapa ilustrativo">
-            <div class="pin" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11Z"/>
-                <circle cx="12" cy="10" r="2"/>
-              </svg>
+              <button class="btn btn-teal"><a href="https://wa.me/5562999968132?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta%20na%20Longevit%C3%A9.">Agendar avaliação</a></button>
             </div>
           </div>
+
+          <div class="map reveal" data-anim="fade-left" aria-label="Mapa">
+  <div class="map-frame" aria-hidden="true">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5927.095101992125!2d-49.279867100000004!3d-16.676582100000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef5fef5f03bfd%3A0xf3e1b4de1872b58f!2sLongevit%C3%A9%20Geriatria%20e%20Medicina%20Integrada!5e1!3m2!1sen!2sbr!4v1772642001876!5m2!1sen!2sbr"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <a class="map-open"
+     href="https://www.google.com/maps/search/?api=1&query=Longevit%C3%A9%20Geriatria%20e%20Medicina%20Integrada"
+     target="_blank" rel="noopener">
+    Abrir no Google Maps
+  </a>
+</div>
         </div>
       </div>
     </section>
@@ -794,7 +803,7 @@
 
         <h4>Redes sociais</h4>
         <div class="socials">
-          <a class="social" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <a class="social" href="https://www.instagram.com/longevite_clinicamedica?igsh=eGdzaHVnZnY5aWho" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -808,7 +817,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a class="social" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <a class="social" href="https://www.facebook.com/share/1DVRPsrpJ9/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
@@ -816,9 +825,8 @@
         </div>
 
         <h4>Portal</h4>
-        <p><a href="#" data-open="modal-agendar">Agendar avaliação</a></p>
+        <p><a href="https://wa.me/5562999968132?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta%20na%20Longevit%C3%A9.">Agendar avaliação</a></p>
         <p><a href="#faq">FAQ</a></p>
-        <small>Este é um template estático. Integre com seu sistema de agenda quando quiser.</small>
       </div>
     </div>
   </footer>
@@ -826,7 +834,7 @@
 
   <!-- WhatsApp flutuante (fixo no canto inferior direito) -->
   <!-- Troque o número e a mensagem abaixo pelo WhatsApp oficial da clínica -->
-  <a class="wa-float" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta%20na%20Longevit%C3%A9." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <a class="wa-float" href="https://wa.me/556299968132?text=Ol%C3%A1!%20Quero%20agendar%20uma%20consulta%20na%20Longevit%C3%A9." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <span class="wa-ico" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="none">
         <path d="M16 3C8.82 3 3 8.6 3 15.5c0 2.55.8 4.93 2.16 6.9L4 29l6.85-1.99A13.4 13.4 0 0 0 16 28c7.18 0 13-5.6 13-12.5S23.18 3 16 3Z" fill="currentColor" opacity=".18"/>
